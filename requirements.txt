@@ -1,7 +1,8 @@
 fastapi
 uvicorn
 jinja2
-tensorflow
+scikit-learn
+joblib
 numpy
 pillow
 pillow-heif
