@@ -3,6 +3,8 @@ body {
     margin: 40px;
     background-color: #f9f9f9;
     color: #333;
+    font-size: 18px;       /* 基本文字サイズを少し大きめに */
+    line-height: 1.6;
 }
 
 .container {
@@ -13,6 +15,7 @@ body {
 
 h1 {
     color: #2c3e50;
+    font-size: 2em;        /* 見出しを強調 */
 }
 
 form {
@@ -21,15 +24,18 @@ form {
 
 input[type="file"] {
     margin: 10px 0;
+    font-size: 18px;       /* ファイル選択文字を大きく */
+    padding: 10px;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 14px 24px;    /* ボタンを大きく */
     background-color: #4CAF50;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 18px;       /* ボタン文字を大きく */
     cursor: pointer;
+    border-radius: 6px;
 }
 
 button:hover {
@@ -43,6 +49,7 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
     text-align: left;
+    font-size: 18px;       /* 結果表示も見やすく */
 }
 
 .uploaded-image {
@@ -64,16 +71,16 @@ button:hover {
     display: inline-block;
     background-color: #e0f7fa;
     color: #00796b;
-    padding: 6px 12px;
-    margin: 4px;
+    padding: 8px 14px;     /* タグを少し大きく */
+    margin: 6px;
     border-radius: 16px;
-    font-size: 14px;
+    font-size: 16px;       /* タグ文字サイズを拡大 */
 }
 
 .emomap-title {
     margin-top: 20px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;       /* タイトルを見やすく */
     font-weight: bold;
     color: #2c3e50;
 }
@@ -92,7 +99,7 @@ button:hover {
 
 .app-description {
     margin: 15px 0;
-    font-size: 14px;
+    font-size: 16px;       /* 説明文も少し大きく */
     line-height: 1.6;
     color: #555;
     text-align: left;
@@ -115,4 +122,26 @@ button:hover {
     height: auto;
     border: 1px solid #ddd;
     border-radius: 6px;
+}
+
+/* スマホ向けレスポンシブ調整 */
+@media (max-width: 600px) {
+    body {
+        font-size: 20px;   /* スマホではさらに大きく */
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    button,
+    input[type="file"] {
+        font-size: 20px;
+        padding: 16px 26px;
+    }
+    .tag {
+        font-size: 18px;
+        padding: 10px 16px;
+    }
+    .app-description {
+        font-size: 18px;
+    }
 }
