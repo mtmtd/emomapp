@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>エモさ診断アプリ</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>エモさ診断アプリ</h1>
+
+        <!-- アプリ説明文 -->
+        <p class="app-description">
+            これは卒業研究「日本風景の「エモさ」を言語化するアプリ開発」で機械学習を使用して作成したアプリです。<br>
+            「ファイルを選択」を押して診断する画像を選び、「診断する」を押すと画像に対応する単語(感性語)が表示されます。<br>
+            ※日本風景以外の画像も診断できますが、学習させていないため精度は期待できません。
+        </p>
+
+        <!-- アップロードフォーム -->
+        <form action="/diagnose" enctype="multipart/form-data" method="post">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">診断する</button>
+        </form>
+
+        <!-- 診断結果表示 -->
+        {% if region %}
+        <div class="result-card {{ region }}">
+            <h2>診断結果</h2>
+
+            <!-- アップロード画像を表示 -->
+            <div class="uploaded-image">
+                <img src="/uploads/{{ image_filename }}" alt="アップロード画像">
+            </div>
+
+            <!-- 感性語 -->
+            <p><strong>感性語（{{ region }}）:</strong></p>
+            <div class="kansengo-tags">
+                {% for word in kansengo %}
+                    <span class="tag">{{ word }}</span>
+                {% endfor %}
+            </div>
+
+            <!-- 診断表（emomap.png） -->
+            <h3 class="emomap-title">診断表</h3>
+            <div class="emomap">
+                <img src="/static/emomap.png" alt="エモマップ">
+            </div>
+
+            <!-- 予測座標・分類 -->
+            <p><strong>予測座標:</strong> X={{ pred_x|round(3) }}, Y={{ pred_y|round(3) }}</p>
+            <p><strong>36領域分類:</strong> X={{ x_label }}, Y={{ y_label }}</p>
+            <p><strong>6領域分類:</strong> {{ region }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

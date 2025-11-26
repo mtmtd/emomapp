@@ -1,0 +1,118 @@
+body {
+    font-family: "Hiragino Sans", "Arial", sans-serif;
+    margin: 40px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+form {
+    margin: 20px 0;
+}
+
+input[type="file"] {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.result-card {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.uploaded-image {
+    margin: 15px 0;
+}
+
+.uploaded-image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.kansengo-tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e0f7fa;
+    color: #00796b;
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+.emomap-title {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.emomap {
+    margin: 10px 0 20px 0;
+    text-align: center;
+}
+
+.emomap img {
+    max-width: 100%;   /* 枠内に収まるように調整 */
+    height: auto;      /* アスペクト比を維持 */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.app-description {
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    text-align: left;
+}
+
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.image-item {
+    text-align: center;
+    width: 200px;
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}

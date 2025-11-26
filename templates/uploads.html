@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>アップロード画像一覧</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>アップロード画像一覧</h1>
+
+        {% if image_files %}
+            <div class="image-list">
+                {% for file in image_files %}
+                    <div class="image-item">
+                        <p>{{ file }}</p>
+                        <img src="/uploads/{{ file }}" alt="{{ file }}">
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>アップロードされた画像はまだありません。</p>
+        {% endif %}
+    </div>
+</body>
+</html>
